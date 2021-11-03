@@ -36,14 +36,14 @@ def make_picture(training_data_filename, model, new_input_arr, output_file):
     preds_ploy = model.predict(x_new_poly)
 
     fig = px.scatter(data, x="Hour", y="count")
-    fig.add_trace(go.Scatter(x=x_new.reshape(24), y=preds_ploy, mode='lines', name='prediction'))
+    fig.add_trace(go.Scatter(x=x_new.reshape(24), y=preds_ploy, mode='lines', name='model'))
     
     test_poly = poly_reg.fit_transform(new_input_arr)
     new_preds = model.predict(test_poly)
     
     
-    fig.add_trace(go.Scatter(x=new_input_arr.reshape(new_input_arr.shape[0]), y=new_preds, name='New Outputs', mode='markers',
-                  marker=dict(color='black', size=5, line=dict(color='black', width=2))))
+    fig.add_trace(go.Scatter(x=new_input_arr.reshape(new_input_arr.shape[0]), y=new_preds, name='prediction', mode='markers',
+                  marker=dict(color='black', size=10, line=dict(color='black', width=2))))
     
     fig.write_image(output_file, width=800, engine='kaleido')
     fig.show()
