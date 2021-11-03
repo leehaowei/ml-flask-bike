@@ -1,0 +1,11 @@
+{
+	31297: 'Promenade',
+ 	31300: 'Hafenstraße',
+ 	34978: 'Gartenstraße',
+ 	34980: 'Hammer_Straße',
+ 	34981: 'Weseler_Straße',
+ 	34982: 'Hüfferstraße',
+ 	34983: 'Warendorfer_Straße',
+ 	35541: 'Neutor',
+ 	53305: 'Kanalpromenade'
+}
