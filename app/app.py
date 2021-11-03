@@ -36,7 +36,7 @@ def make_picture(training_data_filename, model, new_input_arr, output_file):
     preds_ploy = model.predict(x_new_poly)
 
     fig = px.scatter(data, x="Hour", y="count")
-    fig.add_trace(go.Scatter(x=x_new.reshape(24), y=preds_ploy, mode='lines'))
+    fig.add_trace(go.Scatter(x=x_new.reshape(24), y=preds_ploy, mode='lines', name='prediction'))
     
     test_poly = poly_reg.fit_transform(new_input_arr)
     new_preds = model.predict(test_poly)
